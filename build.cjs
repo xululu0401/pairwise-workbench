@@ -1,0 +1,1 @@
+const fs=require('node:fs');let h=fs.readFileSync(__dirname+'/template.html','utf8');for(const [marker,name] of [['/*CORE*/','core.js'],['/*UI*/','ui.js']])h=h.replace(marker,()=>fs.readFileSync(__dirname+'/'+name,'utf8'));fs.writeFileSync(__dirname+'/index.html',h);
